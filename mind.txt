@@ -1,0 +1,33 @@
+hero component:
+life,time,pos,vision,speed,attack,defense,buff,equipment,talent
+
+
+
+add:
+    desc:
+        all of this can use slot to limit its power
+        cast a spell by spell book,dc&cl decide by spell book,which need to cost some resource
+
+    spell:
+        oil
+        magic missile,fireball,shadow killer
+        magic armor,magic shield,invisibility,speed up,stone skin,heal
+        summon ghost
+
+    act:
+        reaction,
+
+    feat:
+        desc:
+            normal feat gain every 5 level after zero level
+            mythic feat gain after use some special item(such as upgrade scroll,strength potion,change scroll,xp potion and boss loot mixed)
+        normal:
+            hp plus,doggo plus,accurate plus,armor plus,attack plus,speed up(move,attack,cast)
+        mythic:
+            meta magic,spell slot up,higher level spell,more spell school
+            some call back event(such as AboutTo/On/After call/cast)
+            Artifact upgrade
+
+    team:
+        desc:
+        can add more char to explore dungeon, multi char act can freeze other
