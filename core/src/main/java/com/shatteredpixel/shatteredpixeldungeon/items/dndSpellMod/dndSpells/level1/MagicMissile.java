@@ -1,8 +1,9 @@
-package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.dndSpells;
+package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.dndSpells.level1;
 
 import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
-import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.DndSepllSchoolEnum;
+import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.DndSepllSchoolEnum;
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.Utils.RandomUtil;
+import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.dndSpells.DndSpell;
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.metamagic.Metamagic;
 
 import java.util.List;

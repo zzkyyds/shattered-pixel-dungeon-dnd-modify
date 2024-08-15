@@ -1,4 +1,4 @@
-package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod;
+package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage;
 
 public enum DndSepllSchoolEnum {
     ABJURATION,
