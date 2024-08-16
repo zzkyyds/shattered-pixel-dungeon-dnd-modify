@@ -123,4 +123,5 @@ dependencies {
 
     implementation project(':services:updates:githubUpdates')
     implementation project(':services:news:shatteredNews')
+    implementation 'org.projectlombok:lombok:1.18.28'
 }

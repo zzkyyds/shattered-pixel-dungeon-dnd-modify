@@ -20,7 +20,7 @@ public class DndSpell extends Item {
 
     public static final String AC_CAST = "CAST";
 
-    public static DndSepllSchoolEnum school=DndSepllSchoolEnum.UNKNOWN;
+    public static DndSepllSchoolEnum school=DndSepllSchoolEnum.COMMON;
     public static int level = 0;
     public static double cost = 0;
 
