@@ -20,9 +20,9 @@ public class DndSpell extends Item {
 
     public static final String AC_CAST = "CAST";
 
-    public DndSepllSchoolEnum school=DndSepllSchoolEnum.UNKNOWN;
-    public int level = 0;
-    public double cost = 0;
+    public static DndSepllSchoolEnum school=DndSepllSchoolEnum.UNKNOWN;
+    public static int level = 0;
+    public static double cost = 0;
 
 
     public void castSpell(final Hero user, final int dst, List<Metamagic> metamagicList) {

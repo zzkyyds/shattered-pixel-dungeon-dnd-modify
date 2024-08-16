@@ -7,6 +7,8 @@ import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.metamagic.Meta
 import java.util.List;
 
 public class FireArrowSpell extends DndSpell {
+    protected static int level = 0;
+    protected static double cost = 1;
 
 
     public void castSpell(final Hero user, final int dst, List<Metamagic> metamagicList) {

@@ -10,8 +10,8 @@ import java.util.List;
 
 public class MagicMissile extends DndSpell {
     protected DndSepllSchoolEnum school = DndSepllSchoolEnum.EVOCATION;
-    protected int level = 1;
-    protected double cost = 1;
+    protected static int level = 1;
+    protected static double cost = 2;
 
 
     private static final int maxCount = 5;
