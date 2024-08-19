@@ -29,7 +29,7 @@ public class DndSpellManager {
 
     private static void init() {
         Class<DndSpell> clazz = DndSpell.class;
-        List<Class<DndSpell>> spellClasses = ClassUtil.getAllSubClass(clazz.getPackage().getName(), clazz);
+        List<Class<DndSpell>> spellClasses = ClassUtil.getDirectSubClass(clazz.getPackage().getName(), clazz);
         List<DndSpell> spells = spellClasses.stream().map(x -> {
             try {
                 return x.getConstructor().newInstance();

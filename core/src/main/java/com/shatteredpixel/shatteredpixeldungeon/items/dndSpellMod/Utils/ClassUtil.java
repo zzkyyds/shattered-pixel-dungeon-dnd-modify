@@ -6,6 +6,7 @@ import org.reflections.Reflections;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 public class ClassUtil {
 
@@ -18,7 +19,7 @@ public class ClassUtil {
     }
 
     /**
-     * 获取指定父类,指定包下所有的子类
+     * 获取指定父类,指定包下所有的子类,包括子类的子类
      */
     public static <T> List<Class<T>> getAllSubClass(String packageName, Class<T> clazz) {
         List<Class<T>> res=new ArrayList<>();
@@ -30,5 +31,9 @@ public class ClassUtil {
             res.add(sc);
         }
         return res;
+    }
+
+    public static <T> List<Class<T>> getDirectSubClass(String packageName, Class<T> clazz) {
+        return getAllSubClass(packageName, clazz).stream().filter(x->x.getSuperclass().equals(clazz)).collect(Collectors.toList());
     }
 }
