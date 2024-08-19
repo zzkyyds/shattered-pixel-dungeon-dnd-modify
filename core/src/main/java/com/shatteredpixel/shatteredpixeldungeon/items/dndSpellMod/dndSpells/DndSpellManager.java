@@ -2,47 +2,55 @@ package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.dndSpells;
 
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.Utils.ClassUtil;
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.DndSepllSchoolEnum;
-import lombok.SneakyThrows;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class DndSpellManager {
 
 
+    public static List<DndSpell> spells = new ArrayList<>();
     public static Map<DndSepllSchoolEnum, List<DndSpell>> schoolMap = new HashMap<>();
     public static Map<Integer, List<DndSpell>> levelMap = new HashMap<>();
 
 
+    public static void main(String[] args) {
+        init();
+        System.out.println(schoolMap);
+        System.out.println(levelMap);
+    }
+
+    static {
+        init();
+    }
+
     private static void init() {
         Class<DndSpell> clazz = DndSpell.class;
-        List<Class<DndSpell>> spells = ClassUtil.getAllSubClass(clazz.getPackage().getName(), clazz);
+        List<Class<DndSpell>> spellClasses = ClassUtil.getAllSubClass(clazz.getPackage().getName(), clazz);
+        List<DndSpell> spells = spellClasses.stream().map(x -> {
+            try {
+                return x.getConstructor().newInstance();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        }).collect(Collectors.toList());
 
-        for (Class<DndSpell> spell : spells) {
-            DndSepllSchoolEnum school=getSchool(spell);
-            int level = getLevel(spell);
-//            List<DndSpell> l=schoolMap.getOrDefault(school,new ArrayList<>());
-//            l.add(spell.newInstance());
+        for (DndSpell spell : spells) {
+            spells.add(spell);
 
+            DndSepllSchoolEnum school = spell.getSchool();
+            int level = spell.getSpellLevel();
+            List<DndSpell> l;
+            l = schoolMap.getOrDefault(school, new ArrayList<>());
+            l.add(spell);
+            schoolMap.put(school, l);
+            l = levelMap.getOrDefault(level, new ArrayList<>());
+            l.add(spell);
+            levelMap.put(level, l);
         }
-    }
 
-
-    @SneakyThrows
-    @SuppressWarnings("unchecked")
-    private static <T> T getField(Class<DndSpell> clazz, String fieldName) {
-        Field field = clazz.getDeclaredField(fieldName);
-        return (T) field.get(clazz);
-    }
-
-    public static DndSepllSchoolEnum getSchool(Class<DndSpell> clazz) {
-        return getField(clazz, "school");
-    }
-
-    public static int getLevel(Class<DndSpell> clazz) {
-        return getField(clazz, "level");
     }
 }

@@ -5,13 +5,17 @@ import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.Dn
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.Utils.RandomUtil;
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.dndSpells.DndSpell;
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.metamagic.Metamagic;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
+@Getter
+@Setter
 public class MagicMissile extends DndSpell {
-    protected DndSepllSchoolEnum school = DndSepllSchoolEnum.EVOCATION;
-    protected static int level = 1;
-    protected static double cost = 2;
+    public DndSepllSchoolEnum school = DndSepllSchoolEnum.EVOCATION;
+    public int spellLevel = 1;
+    public double cost = 2;
 
 
     private static final int maxCount = 5;
