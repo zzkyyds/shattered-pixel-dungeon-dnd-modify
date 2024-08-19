@@ -1,4 +1,4 @@
-package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage;
+package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.dice;
 
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.Utils.RandomUtil;
 
@@ -22,7 +22,7 @@ public enum DiceEnum {
         return dice;
     }
 
-    public int getDice() {
+    public int getDiceRandom() {
         return RandomUtil.getRandomInt(1, dice);
     }
 }

@@ -18,7 +18,7 @@ public class MagicMissile extends DndSpell {
     public double cost = 2;
 
 
-    private static final int maxCount = 5;
+    private final int maxCount = 5;
     //damage=1d4+2
 
 
@@ -35,9 +35,6 @@ public class MagicMissile extends DndSpell {
 
     public int getDamage(int castLevel, List<Metamagic> metamagicList) {
         int damage = 2 + RandomUtil.getRandomInt(1, 4);
-        for (Metamagic metamagic : metamagicList) {
-            damage = metamagic.modifyDamage(damage);
-        }
 
         return damage;
     }

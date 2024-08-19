@@ -1,17 +1,17 @@
 package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.metamagic;
 
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.dice.DiceDamage;
-import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.dndSpells.DndSpellInstance;
 
-public class Metamagic {
-
-
-    //todo 传入法术实例
-    public void applyMetamagic(DndSpellInstance instance) {
-
-    }
+/**
+ * 超魔-强效
+ */
+public class PowerfulMetamagic extends Metamagic{
+    public double damageRate = 1.5;
 
     public DiceDamage modifyDamage(DiceDamage diceDamage) {
+        diceDamage.getDiceVoList().forEach(x->x.setDiceRate(x.getDiceRate()*damageRate));
+
         return diceDamage;
     }
+
 }
