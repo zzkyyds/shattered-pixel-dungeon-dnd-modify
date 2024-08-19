@@ -1,6 +1,5 @@
 package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.dice;
 
-import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.Utils.RandomUtil;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

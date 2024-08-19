@@ -1,15 +1,13 @@
 package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.dndSpells;
 
-import com.shatteredpixel.shatteredpixeldungeon.actors.hero.Hero;
 import com.shatteredpixel.shatteredpixeldungeon.items.Item;
-import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.DndSepllSchoolEnum;
-import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.metamagic.Metamagic;
-import lombok.Data;
+import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.SpellSchoolEnum;
+import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.SepllInfluenceEnum;
+import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.SpellShapeEnum;
+import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.SpellTargetEnum;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
-import java.util.List;
 
 /**
  * 施法时间
@@ -27,11 +25,15 @@ public class DndSpell extends Item {
 
     public static final String AC_CAST = "CAST";
 
-    public DndSepllSchoolEnum school=DndSepllSchoolEnum.COMMON;
+    public SpellSchoolEnum school= SpellSchoolEnum.COMMON;
     public int spellLevel = 0;
     public double cost = 0;
 
+    //施法范围
+    public SpellTargetEnum target= SpellTargetEnum.SELF;
+    public SepllInfluenceEnum influence= SepllInfluenceEnum.SELF;
+    public SpellShapeEnum shape= SpellShapeEnum.POINT;
 
-    public void castSpell(final Hero user, final int dst, List<Metamagic> metamagicList) {
-    }
+
+
 }

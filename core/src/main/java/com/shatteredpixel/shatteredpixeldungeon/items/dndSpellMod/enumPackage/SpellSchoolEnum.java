@@ -2,7 +2,7 @@ package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage;
 
 import java.util.Arrays;
 
-public enum DndSepllSchoolEnum {
+public enum SpellSchoolEnum {
     ABJURATION("防护"),
     CONJURATION("召唤"),
     DIVINATION("预言"),
@@ -20,11 +20,11 @@ public enum DndSepllSchoolEnum {
         return chineseName;
     }
 
-    public static DndSepllSchoolEnum getSchoolByChinese(String cn) {
-        return Arrays.stream(DndSepllSchoolEnum.values()).filter(school -> cn.equals(school.getChineseName())).findAny().orElse(COMMON);
+    public static SpellSchoolEnum getSchoolByChinese(String cn) {
+        return Arrays.stream(SpellSchoolEnum.values()).filter(school -> cn.equals(school.getChineseName())).findAny().orElse(COMMON);
     }
 
-    DndSepllSchoolEnum(String chineseName) {
+    SpellSchoolEnum(String chineseName) {
         this.chineseName = chineseName;
     }
 }

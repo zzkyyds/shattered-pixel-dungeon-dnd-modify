@@ -1,7 +1,7 @@
 package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.dndSpells;
 
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.Utils.ClassUtil;
-import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.DndSepllSchoolEnum;
+import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.SpellSchoolEnum;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ public class DndSpellManager {
 
 
     public static List<DndSpell> spells = new ArrayList<>();
-    public static Map<DndSepllSchoolEnum, List<DndSpell>> schoolMap = new HashMap<>();
+    public static Map<SpellSchoolEnum, List<DndSpell>> schoolMap = new HashMap<>();
     public static Map<Integer, List<DndSpell>> levelMap = new HashMap<>();
 
 
@@ -41,7 +41,7 @@ public class DndSpellManager {
         for (DndSpell spell : spells) {
             spells.add(spell);
 
-            DndSepllSchoolEnum school = spell.getSchool();
+            SpellSchoolEnum school = spell.getSchool();
             int level = spell.getSpellLevel();
             List<DndSpell> l;
             l = schoolMap.getOrDefault(school, new ArrayList<>());
