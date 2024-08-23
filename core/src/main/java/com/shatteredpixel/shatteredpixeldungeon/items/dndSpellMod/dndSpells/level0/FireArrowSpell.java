@@ -8,9 +8,11 @@ import lombok.Setter;
 @Getter
 @Setter
 public class FireArrowSpell extends DndSpell {
-    public SpellSchoolEnum school = SpellSchoolEnum.EVOCATION;
-    public int spellLevel = 0;
-    protected double cost = 1;
+    {
+        school = SpellSchoolEnum.EVOCATION;
+        spellLevel = 0;
+        cost = 1;
+    }
 
 
 }

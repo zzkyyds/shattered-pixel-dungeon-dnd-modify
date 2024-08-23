@@ -11,20 +11,17 @@ import lombok.NoArgsConstructor;
 import java.util.List;
 
 /**
- * 法术实例
+ * 法术实例(已经应用完超魔)
  * 对于多阶段法术,可以考虑使用then或者类似的方法
  */
 @NoArgsConstructor
 @AllArgsConstructor
 public class DndSpellInstance {
 
-    public DndSpell originSpell;
-
-    public List<DndSpellInstance> nextSpells;
-
-    //角色
+    //影响范围和角色
     public Char caster;
     public Char targetChar;
+    public List<Integer> targetPos;
 
     //持续时间
     public double castTime = 1;

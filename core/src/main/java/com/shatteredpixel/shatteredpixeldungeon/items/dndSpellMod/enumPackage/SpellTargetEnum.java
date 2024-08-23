@@ -1,8 +1,11 @@
 package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage;
 
+import lombok.Getter;
+
 /**
  * 施法目标
  */
+@Getter
 public enum SpellTargetEnum {
     SELF("自己"),
     FRIENDLY("友军"),
@@ -15,14 +18,10 @@ public enum SpellTargetEnum {
     ;
 
 
-    private String targetName;
+    private final String targetName;
     SpellTargetEnum(String targetName)
     {
         this.targetName = targetName;
     }
 
-    public String getTargetName()
-    {
-        return targetName;
-    }
 }

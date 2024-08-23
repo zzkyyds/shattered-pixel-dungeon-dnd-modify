@@ -1,8 +1,12 @@
 package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * 施法能够影响的
  */
+@Getter
 public enum SepllInfluenceEnum {
     SELF("自己"),
     FRIENDLY("友军"),
@@ -14,13 +18,10 @@ public enum SepllInfluenceEnum {
     ALL_CHAR("所有角色");
 
 
-    private String influenceName;
+    private final String influenceName;
 
     SepllInfluenceEnum(String targetName) {
         this.influenceName = targetName;
     }
 
-    public String getInfluenceName() {
-        return influenceName;
-    }
 }

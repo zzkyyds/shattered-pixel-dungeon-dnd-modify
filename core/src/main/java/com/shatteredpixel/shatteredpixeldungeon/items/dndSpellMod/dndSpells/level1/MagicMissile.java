@@ -12,14 +12,16 @@ import java.util.List;
 @Getter
 @Setter
 public class MagicMissile extends DndSpell {
-    public SpellSchoolEnum school = SpellSchoolEnum.EVOCATION;
-    public int spellLevel = 1;
-    public double cost = 2;
+
+    {
+        school = SpellSchoolEnum.EVOCATION;
+        spellLevel = 1;
+        cost = 2;
+    }
 
 
     private final int maxCount = 5;
     //damage=1d4+2
-
 
 
     public void castSpell(int castLevel, List<Metamagic> metamagicList, int dst) {

@@ -1,7 +1,10 @@
 package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage;
 
+import lombok.Getter;
+
 import java.util.Arrays;
 
+@Getter
 public enum SpellSchoolEnum {
     ABJURATION("防护"),
     CONJURATION("召唤"),

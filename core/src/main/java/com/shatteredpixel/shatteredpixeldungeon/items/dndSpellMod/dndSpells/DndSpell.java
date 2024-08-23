@@ -1,5 +1,6 @@
 package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.dndSpells;
 
+import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
 import com.shatteredpixel.shatteredpixeldungeon.items.Item;
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.SpellSchoolEnum;
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.SepllInfluenceEnum;
@@ -50,6 +51,9 @@ public class DndSpell extends Item {
 
 
         return new DndSpellInstance();
+    }
+
+    public void castSpell(Char caster, int pos){
     }
 
 }
