@@ -3,7 +3,7 @@ package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.dndSpells;
 import com.shatteredpixel.shatteredpixeldungeon.actors.Char;
 import com.shatteredpixel.shatteredpixeldungeon.items.Item;
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.SpellSchoolEnum;
-import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.SepllInfluenceEnum;
+import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.SpellInfluenceEnum;
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.SpellShapeEnum;
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.enumPackage.SpellTargetEnum;
 import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.metamagic.Metamagic;
@@ -38,9 +38,10 @@ public class DndSpell extends Item {
 
     //施法范围
     public SpellTargetEnum target = SpellTargetEnum.SELF;
-    public SepllInfluenceEnum influence = SepllInfluenceEnum.ALL_CHAR;
+    public SpellInfluenceEnum influence = SpellInfluenceEnum.ALL_CHAR;
     public SpellShapeEnum shape = SpellShapeEnum.CIRCLE;
     public int range = 3;
+    public int targetNum = 1;
 
     //可应用超魔和已应用超魔
     public List<Metamagic> canMetamagicList;
@@ -53,7 +54,13 @@ public class DndSpell extends Item {
         return new DndSpellInstance();
     }
 
-    public void castSpell(Char caster, int pos){
+    /**
+     * todo
+     * 一部分法术不需要指定目标,一部分需要指定一个位置,一部分需要指定多个位置
+     * 多阶段法术的后续也可能会需要指定位置,如内爆术多阶段转移目标
+     * 参考 GameScene.selectCell SpiritBow.shooter
+     */
+    public void castSpell(Char caster) {
     }
 
 }

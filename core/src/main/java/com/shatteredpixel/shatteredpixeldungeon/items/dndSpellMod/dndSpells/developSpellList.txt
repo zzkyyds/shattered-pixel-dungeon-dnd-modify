@@ -1,0 +1,8 @@
+level 0:
+fire arrow,freeze arrow,holy hit,light
+
+level 1:
+magic missile,magic armor,magic shield,fade,heal minor injury,long arm,deflection field
+
+level 2:
+invisibility,heal injury,bark skin

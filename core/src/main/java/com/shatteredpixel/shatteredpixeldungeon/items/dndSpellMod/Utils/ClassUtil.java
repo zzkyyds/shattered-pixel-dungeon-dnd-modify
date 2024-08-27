@@ -1,6 +1,6 @@
 package com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.Utils;
 
-import com.shatteredpixel.shatteredpixeldungeon.items.dndSpellMod.dndSpells.DndSpell;
+import org.jetbrains.annotations.NotNull;
 import org.reflections.Reflections;
 
 import java.util.ArrayList;
@@ -11,11 +11,7 @@ import java.util.stream.Collectors;
 public class ClassUtil {
 
     public static void main(String[] args) {
-        Class<DndSpell> dndSpellClass=DndSpell.class;
-        String packageName=dndSpellClass.getPackage().getName();
-        for (Class<DndSpell> dndSpell : getAllSubClass(packageName, DndSpell.class)) {
-            System.out.println(dndSpell.getSimpleName());
-        }
+
     }
 
     /**
@@ -33,7 +29,7 @@ public class ClassUtil {
         return res;
     }
 
-    public static <T> List<Class<T>> getDirectSubClass(String packageName, Class<T> clazz) {
-        return getAllSubClass(packageName, clazz).stream().filter(x->x.getSuperclass().equals(clazz)).collect(Collectors.toList());
+    public static <T> List<Class<T>> getDirectSubClass(String packageName,@NotNull Class<T> clazz) {
+        return getAllSubClass(packageName, clazz).stream().filter(x->clazz.equals(x.getSuperclass())).collect(Collectors.toList());
     }
 }
